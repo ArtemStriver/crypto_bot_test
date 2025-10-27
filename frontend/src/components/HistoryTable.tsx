@@ -24,7 +24,7 @@ const HistoryTable: React.FC<HistoryTableProps> = ({
   const formatPercent = (value: number | null) => {
     if (value === null || value === undefined) return 'N/A';
     const sign = value >= 0 ? '+' : '';
-    return `${sign}${value.toFixed(2)}%`;
+    return `${sign}${value.toFixed(9)}%`;
   };
 
   const getPercentClass = (value: number | null) => {
@@ -55,15 +55,15 @@ const HistoryTable: React.FC<HistoryTableProps> = ({
               {data.map((item) => (
                 <tr key={item.id}>
                   <td className="symbol-cell">{item.symbol}</td>
-                  <td>${item.price.toFixed(2)}</td>
+                  <td>${item.price.toFixed(8)}</td>
                   <td>
                     {item.previous_price
-                      ? `$${item.previous_price.toFixed(2)}`
+                      ? `$${item.previous_price.toFixed(8)}`
                       : 'N/A'}
                   </td>
                   <td className={getPercentClass(item.price_change)}>
                     {item.price_change
-                      ? `$${item.price_change.toFixed(2)}`
+                      ? `$${item.price_change.toFixed(8)}`
                       : 'N/A'}
                   </td>
                   <td className={getPercentClass(item.price_change_percent)}>

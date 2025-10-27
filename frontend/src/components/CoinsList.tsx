@@ -9,13 +9,13 @@ interface CoinsListProps {
 
 const CoinsList: React.FC<CoinsListProps> = ({ coins }) => {
   const formatPrice = (price: number) => {
-    return `$${price.toFixed(2)}`;
+    return `$${price.toFixed(9)}`;
   };
 
   const formatPercent = (value: number | null) => {
     if (value === null) return 'N/A';
     const sign = value >= 0 ? '+' : '';
-    return `${sign}${value.toFixed(2)}%`;
+    return `${sign}${value.toFixed(9)}%`;
   };
 
   const getPercentClass = (value: number | null) => {
@@ -59,7 +59,7 @@ const CoinsList: React.FC<CoinsListProps> = ({ coins }) => {
                 <div className="detail-item">
                   <span className="detail-label">Funding Rate:</span>
                   <span className="detail-value">
-                    {(coin.funding_rate * 100).toFixed(4)}%
+                    {(coin.funding_rate * 100).toFixed(8)}%
                   </span>
                 </div>
               )}
