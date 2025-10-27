@@ -29,7 +29,7 @@
 2. **Создайте файл переменных окружения**:
 
 ```bash
-  cat backend/.env.example backend/.env
+  cat backend/.env.example > backend/.env
 ```
 
 3. **Запустите приложение с помощью Docker Compose**:
@@ -64,7 +64,7 @@
 
 При необходимости внесите изменения для корректного подключения к базе данных.
 ```bash
-  cat backend/.env.example backend/.env
+  cat backend/.env.example > backend/.env
 ```
 
 3. **Установите библиотеки**:
